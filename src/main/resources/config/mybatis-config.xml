@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Confi 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="properties/jdbc.properties"/>
+    <!--别名-->
+    <typeAliases>
+        <typeAlias alias="User" type="cn.oureda.entity.User"></typeAlias>
+        <typeAlias alias="Book" type="cn.oureda.entity.Food"></typeAlias>
+        <typeAlias alias="Comment" type="cn.oureda.entity.Comment"></typeAlias>
+    </typeAliases>
+    <plugins>
+        <plugin interceptor="cn.oureda.util.PagePlugin">
+            <!--默认第1页-->
+            <property name="default.page" value="1"/>
+            <!--默认每页20条-->
+            <property name="default.pageSize" value="10"/>
+            <!--默认不启用分页插件-->
+            <property name="default.useFlag" value="false"/>
+            <!--默认不检查页码-->
+            <property name="default.checkFlag" value="false"/>
+        </plugin>
+    </plugins>
+    <!--定义数据库信息，默认使用development构建环境-->
+    <environments default="development">
+        <environment id="development">
+            <!--采用jdbc事务管理-->
+            <transactionManager type="JDBC"/>
+            <!--配置数据库链接信息-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+</configuration>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--改为在dispatcher中加载log4j.properties文件，主要是为了能够改变info.log的目录-->
+    <!--<context:property-placeholder location="classpath:log4j.properties"/>-->
+
+    <context:property-placeholder location="classpath:properties/*.properties"/>
+    <import resource="classpath:config/spring-mybatis.xml"/>
+    <import resource="classpath:config/spring-shiro.xml"/>
+
+
+
+    <!-- 扫描-->
+    <context:component-scan base-package="cn.oureda.*"/>
+
+    <!--开启注解-->
+    <mvc:annotation-driven/>
+
+    <!--第一次location="/static"，导致每次访问都要加上/static，后来再加上/就可以啦-->
+    <mvc:resources mapping="/**" location="/view/"/>
+
+    <!--文件上传-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- one of the properties available; the maximum file size in bytes -->
+        <!--2M-->
+        <!--单位为字节-->
+        <property name="maxUploadSize" value="2147483648"/>
+        <property name="uploadTempDir" value="/static"/>
+        <property name="maxInMemorySize" value="1048576"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+
+    <!--试图解析器-->
+    <!-- freemarker的配置 -->
+    <bean id="freemarkerConfig"
+          class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/view/"/>
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="template_update_delay">10</prop>
+                <prop key="locale">zh_CN</prop>
+                <prop key="datetime_format">yyyy-MM-dd</prop>
+                <prop key="date_format">yyyy-MM-dd</prop>
+                <prop key="number_format">#.##</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- FreeMarker视图解析 -->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+        <property name="suffix" value=".html"/>
+        <property name="contentType" value="text/html;charset=utf-8"/>
+        <property name="exposeRequestAttributes" value="true"/>
+        <property name="exposeSessionAttributes" value="true"/>
+        <property name="exposeSpringMacroHelpers" value="true"/>
+    </bean>
+
+</beans>

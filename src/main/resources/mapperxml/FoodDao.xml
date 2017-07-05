@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.oureda.dao.FoodDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="cn.oureda.entity.Food">
+        <result column="goodsName" property="goodsName"/>
+        <result column="price" property="price"/>
+        <result column="count" property="count"/>
+        <result column="cover" property="cover"/>
+        <result column="originPrice" property="originPrice"/>
+        <result column="id" property="id"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `goodsName`,
+        `price`,
+        `count`,
+        `cover`,
+        `originPrice`,
+        `id`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO food (
+            `goodsName`,
+            `price`,
+            `count`,
+            `cover`,
+            `originPrice`,
+            `id`
+        ) VALUES (
+            #{pojo.goodsName},
+            #{pojo.price},
+            #{pojo.count},
+            #{pojo.cover},
+            #{pojo.originPrice},
+            #{pojo.id}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO food
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.goodsName!=null"> `goodsName`,</if>
+            <if test="pojo.price!=null"> `price`,</if>
+            <if test="pojo.count!=null"> `count`,</if>
+            <if test="pojo.cover!=null"> `cover`,</if>
+            <if test="pojo.originPrice!=null"> `originPrice`,</if>
+            <if test="pojo.id!=null"> `id`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.goodsName!=null">#{pojo.goodsName},</if>
+            <if test="pojo.price!=null">#{pojo.price},</if>
+            <if test="pojo.count!=null">#{pojo.count},</if>
+            <if test="pojo.cover!=null">#{pojo.cover},</if>
+            <if test="pojo.originPrice!=null">#{pojo.originPrice},</if>
+            <if test="pojo.id!=null">#{pojo.id},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO food (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.goodsName},
+            #{pojo.price},
+            #{pojo.count},
+            #{pojo.cover},
+            #{pojo.originPrice},
+            #{pojo.id}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE food
+        <set>
+            <if test="pojo.goodsName != null"> `goodsName` = #{pojo.goodsName}, </if>
+            <if test="pojo.price != null"> `price` = #{pojo.price}, </if>
+            <if test="pojo.count != null"> `count` = #{pojo.count}, </if>
+            <if test="pojo.cover != null"> `cover` = #{pojo.cover}, </if>
+            <if test="pojo.originPrice != null"> `originPrice` = #{pojo.originPrice}, </if>
+            <if test="pojo.id != null"> `id` = #{pojo.id} </if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+</mapper>
+
