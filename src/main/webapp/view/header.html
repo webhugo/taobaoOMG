@@ -1,0 +1,131 @@
+<!-- header -->
+<div class="agileits_header">
+    <div class="container">
+        <div class="w3l_offers">
+            <p><a href="/product">商品中心</a></p>
+        </div>
+        <div class="agile-login">
+            <ul>
+                <#if user??>
+                    <li><a href="">${user.email}</a></li>
+                    <#else>
+                    <li><a href="/login">登录</a></li>
+                </#if>
+                <li><a href="#">帮助</a></li>
+
+            </ul>
+        </div>
+        <div class="product_list_header">
+            <form action="" method="post" class="last">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="display" value="1">
+                <button class="w3view-cart" type="submit" name="submit" value="">
+                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<div class="logo_products">
+    <div class="container">
+        <div class="w3ls_logo_products_left1">
+            <ul class="phone_email">
+                <li><i class="fa fa-phone" aria-hidden="true"></i>客服电话 : (+86) 234 567</li>
+
+            </ul>
+        </div>
+        <div class="w3ls_logo_products_left">
+            <h1><a href="/">淘宝网</a></h1>
+        </div>
+        <div class="w3l_search">
+            <form action="/search" method="post">
+                <input type="search" name="search" placeholder="搜索想要的产品..." required="">
+                <button type="submit" class="btn btn-default search" aria-label="Left Align">
+                    <i class="fa fa-search" aria-hidden="true"> </i>
+                </button>
+                <div class="clearfix"></div>
+            </form>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- //header -->
+<!-- navigation -->
+<div class="navigation-agileits">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header nav_2">
+                <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse"
+                        data-target="#bs-megadropdown-tabs">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/" class="act">主页</a></li>
+                    <!-- Mega Menu -->
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">食品<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="multi-gd-img">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>所有类别</h6>
+                                        <li><a href="">豆类</a></li>
+                                        <li><a href="">杏仁类</a></li>
+                                        <li><a href="">腰果类</a></li>
+                                        <li><a href="">干果类</a></li>
+                                        <li><a href="">香料</a></li>
+                                        <li><a href="">米类</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">家居<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="multi-gd-img">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>所有类别</h6>
+                                        <li><a href="">炊具</a></li>
+                                        <li><a href="">厨房用品</a></li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">婴儿<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="multi-gd-img">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>所有类别</h6>
+                                        <li><a href="">奶粉</a></li>
+                                        <li><a href="">玩具</a></li>
+                                        <li><a href="">衣服</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </ul>
+                    </li>
+                    <li><a href="">今日特惠</a></li>
+                    <li><a href="">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

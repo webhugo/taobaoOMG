@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.oureda.dao.UserDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="cn.oureda.entity.User">
+        <result column="email" property="email"/>
+        <result column="password" property="password"/>
+        <result column="type" property="type"/>
+        <result column="goods_ids" property="goods_ids"/>
+        <result column="id" property="id"/>
+        <result column="create_time" property="create_time"/>
+        <result column="update_time" property="update_time"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `email`,
+        `password`,
+        `type`,
+        `goods_ids`,
+        `id`,
+        `create_time`,
+        `update_time`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO user (
+            `email`,
+            `password`,
+            `type`,
+            `goods_ids`,
+            `id`,
+            `create_time`,
+            `update_time`
+        ) VALUES (
+            #{pojo.email},
+            #{pojo.password},
+            #{pojo.type},
+            #{pojo.goods_ids},
+            #{pojo.id},
+            #{pojo.create_time},
+            #{pojo.update_time}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.email!=null">`email`,</if>
+            <if test="pojo.password!=null">`password`,</if>
+            <if test="pojo.type!=null">`type`,</if>
+            <if test="pojo.goods_ids!=null">`goods_ids`,</if>
+            <if test="pojo.id!=null">`id`,</if>
+            <if test="pojo.create_time!=null">`create_time`,</if>
+            <if test="pojo.update_time!=null">`update_time`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.email!=null">#{pojo.email},</if>
+            <if test="pojo.password!=null">#{pojo.password},</if>
+            <if test="pojo.type!=null">#{pojo.type},</if>
+            <if test="pojo.goods_ids!=null">#{pojo.goods_ids},</if>
+            <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.create_time!=null">#{pojo.create_time},</if>
+            <if test="pojo.update_time!=null">#{pojo.update_time},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO user (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.email},
+            #{pojo.password},
+            #{pojo.type},
+            #{pojo.goods_ids},
+            #{pojo.id},
+            #{pojo.create_time},
+            #{pojo.update_time}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE user
+        <set>
+            <if test="pojo.email != null">`email` = #{pojo.email},</if>
+            <if test="pojo.password != null">`password` = #{pojo.password},</if>
+            <if test="pojo.type != null">`type` = #{pojo.type},</if>
+            <if test="pojo.goods_ids != null">`goods_ids` = #{pojo.goods_ids},</if>
+            <if test="pojo.id != null">`id` = #{pojo.id},</if>
+            <if test="pojo.create_time != null">`create_time` = #{pojo.create_time},</if>
+            <if test="pojo.update_time != null">`update_time` = #{pojo.update_time}</if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+
+
+    <select id="selectByEmailAndPassword" resultType="User">
+        SELECT
+            id,
+            type
+        FROM user
+        WHERE email = #{email} AND password = #{password}
+    </select>
+
+    <select id="findByEmail" resultType="User">
+        SELECT * FROM user
+        WHERE email = #{email}
+    </select>
+</mapper>
+

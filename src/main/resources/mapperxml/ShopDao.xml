@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.oureda.dao.ShopDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="cn.oureda.entity.Shop">
+        <result column="shop_name" property="shop_name"/>
+        <result column="description" property="description"/>
+        <result column="cover" property="cover"/>
+        <result column="boss_id" property="boss_id"/>
+        <result column="id" property="id"/>
+        <result column="create_time" property="create_time"/>
+        <result column="update_time" property="update_time"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `shop_name`,
+        `description`,
+        `cover`,
+        `boss_id`,
+        `id`,
+        `create_time`,
+        `update_time`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO shop (
+            `shop_name`,
+            `description`,
+            `cover`,
+            `boss_id`,
+            `id`,
+            `create_time`,
+            `update_time`
+        ) VALUES (
+            #{pojo.shop_name},
+            #{pojo.description},
+            #{pojo.cover},
+            #{pojo.boss_id},
+            #{pojo.id},
+            #{pojo.create_time},
+            #{pojo.update_time}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO shop
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.shop_name!=null"> `shop_name`,</if>
+            <if test="pojo.description!=null"> `description`,</if>
+            <if test="pojo.cover!=null"> `cover`,</if>
+            <if test="pojo.boss_id!=null"> `boss_id`,</if>
+            <if test="pojo.id!=null"> `id`,</if>
+            <if test="pojo.create_time!=null"> `create_time`,</if>
+            <if test="pojo.update_time!=null"> `update_time`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.shop_name!=null">#{pojo.shop_name},</if>
+            <if test="pojo.description!=null">#{pojo.description},</if>
+            <if test="pojo.cover!=null">#{pojo.cover},</if>
+            <if test="pojo.boss_id!=null">#{pojo.boss_id},</if>
+            <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.create_time!=null">#{pojo.create_time},</if>
+            <if test="pojo.update_time!=null">#{pojo.update_time},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO shop (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.shop_name},
+            #{pojo.description},
+            #{pojo.cover},
+            #{pojo.boss_id},
+            #{pojo.id},
+            #{pojo.create_time},
+            #{pojo.update_time}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE shop
+        <set>
+            <if test="pojo.shop_name != null"> `shop_name` = #{pojo.shop_name}, </if>
+            <if test="pojo.description != null"> `description` = #{pojo.description}, </if>
+            <if test="pojo.cover != null"> `cover` = #{pojo.cover}, </if>
+            <if test="pojo.boss_id != null"> `boss_id` = #{pojo.boss_id}, </if>
+            <if test="pojo.id != null"> `id` = #{pojo.id}, </if>
+            <if test="pojo.create_time != null"> `create_time` = #{pojo.create_time}, </if>
+            <if test="pojo.update_time != null"> `update_time` = #{pojo.update_time} </if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+</mapper>
+

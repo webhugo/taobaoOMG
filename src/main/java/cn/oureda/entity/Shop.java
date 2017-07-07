@@ -5,17 +5,20 @@ package cn.oureda.entity;
  */
 public class Shop extends BaseEntity {
     //商店名字
-    private String shopName;
-    //书店的介绍
+    private String shop_name;
+    //商店的介绍
     private String description;
+    //商店的封面
+    private String cover;
+    //老板的id
+    private Long boss_id;
 
-
-    public String getShopName() {
-        return shopName;
+    public String getShop_name() {
+        return shop_name;
     }
 
-    public void setShopName(String shopName) {
-        this.shopName = shopName;
+    public void setShop_name(String shop_name) {
+        this.shop_name = shop_name;
     }
 
     public String getDescription() {
@@ -24,5 +27,21 @@ public class Shop extends BaseEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
+    public Long getBoss_id() {
+        return boss_id;
+    }
+
+    public void setBoss_id(Long boss_id) {
+        this.boss_id = boss_id;
     }
 }

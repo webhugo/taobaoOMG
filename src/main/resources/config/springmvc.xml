@@ -10,7 +10,7 @@
 
     <context:property-placeholder location="classpath:properties/*.properties"/>
     <import resource="classpath:config/spring-mybatis.xml"/>
-    <import resource="classpath:config/spring-shiro.xml"/>
+    <import resource="classpath:config/spring-redis.xml"/>
 
 
 

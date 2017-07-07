@@ -5,8 +5,9 @@
     <!--别名-->
     <typeAliases>
         <typeAlias alias="User" type="cn.oureda.entity.User"></typeAlias>
-        <typeAlias alias="Book" type="cn.oureda.entity.Food"></typeAlias>
+        <typeAlias alias="Food" type="cn.oureda.entity.Food"></typeAlias>
         <typeAlias alias="Comment" type="cn.oureda.entity.Comment"></typeAlias>
+        <typeAlias alias="Shop" type="cn.oureda.entity.Shop"></typeAlias>
     </typeAliases>
     <plugins>
         <plugin interceptor="cn.oureda.util.PagePlugin">
@@ -38,5 +39,8 @@
 
     <mappers>
         <mapper resource="mapperxml/FoodDao.xml"/>
+        <mapper resource="mapperxml/CommentDao.xml"/>
+        <mapper resource="mapperxml/ShopDao.xml"/>
+        <mapper resource="mapperxml/UserDao.xml"/>
     </mappers>
 </configuration>

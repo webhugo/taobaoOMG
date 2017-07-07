@@ -5,7 +5,8 @@
     <!--别名-->
     <typeAliases>
         <typeAlias alias="User" type="cn.oureda.entity.User"></typeAlias>
-        <typeAlias alias="Book" type="cn.oureda.entity.Food"></typeAlias>
+        <typeAlias alias="Food" type="cn.oureda.entity.Food"></typeAlias>
+        <typeAlias alias="Shop" type="cn.oureda.entity.Shop"></typeAlias>
         <typeAlias alias="Comment" type="cn.oureda.entity.Comment"></typeAlias>
     </typeAliases>
     <plugins>

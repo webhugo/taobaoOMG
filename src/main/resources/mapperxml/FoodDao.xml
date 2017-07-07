@@ -3,40 +3,80 @@
 <mapper namespace="cn.oureda.dao.FoodDao">
     <!--auto generated Code-->
     <resultMap id="AllColumnMap" type="cn.oureda.entity.Food">
-        <result column="goodsName" property="goodsName"/>
+        <result column="goods_name" property="goods_name"/>
         <result column="price" property="price"/>
         <result column="count" property="count"/>
         <result column="cover" property="cover"/>
-        <result column="originPrice" property="originPrice"/>
+        <result column="origin_price" property="origin_price"/>
+        <result column="shop_id" property="shop_id"/>
+        <result column="sell_num" property="sell_num"/>
+        <result column="good_comment" property="good_comment"/>
+        <result column="bad_comment" property="bad_comment"/>
+        <result column="click_num" property="click_num"/>
+        <result column="type" property="type"/>
+        <result column="description" property="description"/>
+        <result column="flag" property="flag"/>
         <result column="id" property="id"/>
+        <result column="create_time" property="create_time"/>
+        <result column="update_time" property="update_time"/>
     </resultMap>
 
     <!--auto generated Code-->
     <sql id="all_column">
-        `goodsName`,
+        `goods_name`,
         `price`,
         `count`,
         `cover`,
-        `originPrice`,
-        `id`
+        `origin_price`,
+        `shop_id`,
+        `sell_num`,
+        `good_comment`,
+        `bad_comment`,
+        `click_num`,
+        `type`,
+        `description`,
+        `flag`,
+        `id`,
+        `create_time`,
+        `update_time`
     </sql>
 
     <!--auto generated Code-->
     <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
         INSERT INTO food (
-            `goodsName`,
+            `goods_name`,
             `price`,
             `count`,
             `cover`,
-            `originPrice`,
-            `id`
+            `origin_price`,
+            `shop_id`,
+            `sell_num`,
+            `good_comment`,
+            `bad_comment`,
+            `click_num`,
+            `type`,
+            `description`,
+            `flag`,
+            `id`,
+            `create_time`,
+            `update_time`
         ) VALUES (
-            #{pojo.goodsName},
+            #{pojo.goods_name},
             #{pojo.price},
             #{pojo.count},
             #{pojo.cover},
-            #{pojo.originPrice},
-            #{pojo.id}
+            #{pojo.origin_price},
+            #{pojo.shop_id},
+            #{pojo.sell_num},
+            #{pojo.good_comment},
+            #{pojo.bad_comment},
+            #{pojo.click_num},
+            #{pojo.type},
+            #{pojo.description},
+            #{pojo.flag},
+            #{pojo.id},
+            #{pojo.create_time},
+            #{pojo.update_time}
         )
     </insert>
 
@@ -44,21 +84,41 @@
     <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
         INSERT INTO food
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="pojo.goodsName!=null"> `goodsName`,</if>
-            <if test="pojo.price!=null"> `price`,</if>
-            <if test="pojo.count!=null"> `count`,</if>
-            <if test="pojo.cover!=null"> `cover`,</if>
-            <if test="pojo.originPrice!=null"> `originPrice`,</if>
-            <if test="pojo.id!=null"> `id`,</if>
+            <if test="pojo.goods_name!=null">`goods_name`,</if>
+            <if test="pojo.price!=null">`price`,</if>
+            <if test="pojo.count!=null">`count`,</if>
+            <if test="pojo.cover!=null">`cover`,</if>
+            <if test="pojo.origin_price!=null">`origin_price`,</if>
+            <if test="pojo.shop_id!=null">`shop_id`,</if>
+            <if test="pojo.sell_num!=null">`sell_num`,</if>
+            <if test="pojo.good_comment!=null">`good_comment`,</if>
+            <if test="pojo.bad_comment!=null">`bad_comment`,</if>
+            <if test="pojo.click_num!=null">`click_num`,</if>
+            <if test="pojo.type!=null">`type`,</if>
+            <if test="pojo.description!=null">`description`,</if>
+            <if test="pojo.flag!=null">`flag`,</if>
+            <if test="pojo.id!=null">`id`,</if>
+            <if test="pojo.create_time!=null">`create_time`,</if>
+            <if test="pojo.update_time!=null">`update_time`,</if>
         </trim>
         VALUES
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="pojo.goodsName!=null">#{pojo.goodsName},</if>
+            <if test="pojo.goods_name!=null">#{pojo.goods_name},</if>
             <if test="pojo.price!=null">#{pojo.price},</if>
             <if test="pojo.count!=null">#{pojo.count},</if>
             <if test="pojo.cover!=null">#{pojo.cover},</if>
-            <if test="pojo.originPrice!=null">#{pojo.originPrice},</if>
+            <if test="pojo.origin_price!=null">#{pojo.origin_price},</if>
+            <if test="pojo.shop_id!=null">#{pojo.shop_id},</if>
+            <if test="pojo.sell_num!=null">#{pojo.sell_num},</if>
+            <if test="pojo.good_comment!=null">#{pojo.good_comment},</if>
+            <if test="pojo.bad_comment!=null">#{pojo.bad_comment},</if>
+            <if test="pojo.click_num!=null">#{pojo.click_num},</if>
+            <if test="pojo.type!=null">#{pojo.type},</if>
+            <if test="pojo.description!=null">#{pojo.description},</if>
+            <if test="pojo.flag!=null">#{pojo.flag},</if>
             <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.create_time!=null">#{pojo.create_time},</if>
+            <if test="pojo.update_time!=null">#{pojo.update_time},</if>
         </trim>
     </insert>
 
@@ -69,12 +129,22 @@
         )VALUES
         <foreach collection="pojos" item="pojo" index="index" separator=",">
             (
-            #{pojo.goodsName},
+            #{pojo.goods_name},
             #{pojo.price},
             #{pojo.count},
             #{pojo.cover},
-            #{pojo.originPrice},
-            #{pojo.id}
+            #{pojo.origin_price},
+            #{pojo.shop_id},
+            #{pojo.sell_num},
+            #{pojo.good_comment},
+            #{pojo.bad_comment},
+            #{pojo.click_num},
+            #{pojo.type},
+            #{pojo.description},
+            #{pojo.flag},
+            #{pojo.id},
+            #{pojo.create_time},
+            #{pojo.update_time}
             )
         </foreach>
     </insert>
@@ -83,14 +153,52 @@
     <update id="update">
         UPDATE food
         <set>
-            <if test="pojo.goodsName != null"> `goodsName` = #{pojo.goodsName}, </if>
-            <if test="pojo.price != null"> `price` = #{pojo.price}, </if>
-            <if test="pojo.count != null"> `count` = #{pojo.count}, </if>
-            <if test="pojo.cover != null"> `cover` = #{pojo.cover}, </if>
-            <if test="pojo.originPrice != null"> `originPrice` = #{pojo.originPrice}, </if>
-            <if test="pojo.id != null"> `id` = #{pojo.id} </if>
+            <if test="pojo.goods_name != null">`goods_name` = #{pojo.goods_name},</if>
+            <if test="pojo.price != null">`price` = #{pojo.price},</if>
+            <if test="pojo.count != null">`count` = #{pojo.count},</if>
+            <if test="pojo.cover != null">`cover` = #{pojo.cover},</if>
+            <if test="pojo.origin_price != null">`origin_price` = #{pojo.origin_price},</if>
+            <if test="pojo.shop_id != null">`shop_id` = #{pojo.shop_id},</if>
+            <if test="pojo.sell_num != null">`sell_num` = #{pojo.sell_num},</if>
+            <if test="pojo.good_comment != null">`good_comment` = #{pojo.good_comment},</if>
+            <if test="pojo.bad_comment != null">`bad_comment` = #{pojo.bad_comment},</if>
+            <if test="pojo.click_num != null">`click_num` = #{pojo.click_num},</if>
+            <if test="pojo.type != null">`type` = #{pojo.type},</if>
+            <if test="pojo.description != null">`description` = #{pojo.description},</if>
+            <if test="pojo.flag != null">`flag` = #{pojo.flag},</if>
+            <if test="pojo.id != null">`id` = #{pojo.id},</if>
+            <if test="pojo.create_time != null">`create_time` = #{pojo.create_time},</if>
+            <if test="pojo.update_time != null">`update_time` = #{pojo.update_time}</if>
         </set>
         WHERE id = #{pojo.id}
     </update>
+
+
+    <select id="findPrefers" resultMap="AllColumnMap">
+        SELECT *
+        FROM food
+        WHERE flag = #{flag}
+    </select>
+
+    <select id="search" resultMap="AllColumnMap">
+        SELECT *
+        FROM food WHERE
+        <foreach collection="strSet" item="str" index="index" separator="or">
+            goods_name LIKE concat('%',#{str},'%') or description LIKE concat('%',#{str},'%')
+        </foreach>
+
+    </select>
+
+
+    <select id="find" resultType="Food">
+        SELECT *
+        FROM food
+        WHERE id = #{id}
+    </select>
+
+    <select id="findAllByCreate" resultMap="AllColumnMap">
+        SELECT *
+        FROM food ORDER BY create_time DESC
+    </select>
 </mapper>
 

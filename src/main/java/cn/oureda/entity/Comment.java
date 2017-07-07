@@ -7,9 +7,9 @@ public class Comment extends BaseEntity {
     //评论的内容
     private String content;
     //对哪件商品做的评论
-    private Long GoodsId;
+    private Long goods_id;
     //评论的用户
-    private Long userId;
+    private Long user_id;
 
     public String getContent() {
         return content;
@@ -19,19 +19,22 @@ public class Comment extends BaseEntity {
         this.content = content;
     }
 
-    public Long getGoodsId() {
-        return GoodsId;
+    public Long getGoods_id() {
+        return goods_id;
     }
 
-    public void setGoodsId(Long goodsId) {
-        GoodsId = goodsId;
+    public void setGoods_id(Long goods_id) {
+        this.goods_id = goods_id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
+
+
+
 }
