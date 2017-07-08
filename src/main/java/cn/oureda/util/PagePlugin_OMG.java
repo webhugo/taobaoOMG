@@ -29,7 +29,7 @@ import java.util.Set;
  *
  */
 @Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class,Integer.class})})
-public class PagePlugin implements Interceptor {
+public class PagePlugin_OMG implements Interceptor {
     private Integer defaultPage;//默认页码
     private Integer defaultPageSize;//默认每页条数
     private Boolean defaultUseFlag;//默认是否启动插件
@@ -45,7 +45,7 @@ public class PagePlugin implements Interceptor {
         }
         BoundSql boundSql = (BoundSql) metaStatementHandler.getValue("delegate.boundSql");
         Object parameterObject = boundSql.getParameterObject();
-        PageParams pageParams = getPageParams(parameterObject);
+        PageParams_OMG pageParams = getPageParams(parameterObject);
         if (pageParams == null) { //无法获取分页参数，不进行分页。
             return invocation.proceed();
         }
@@ -113,8 +113,8 @@ public class PagePlugin implements Interceptor {
         //修改当前需要执行的SQL
         metaStatementHandler.setValue("delegate.boundSql.sql", newSql);
     }
-    private PageParams getPageParams(Object parameterObject){
-        PageParams pageParams = null;
+    private PageParams_OMG getPageParams(Object parameterObject){
+        PageParams_OMG pageParams = null;
         if (parameterObject == null) {
             return null;
         }
@@ -127,12 +127,12 @@ public class PagePlugin implements Interceptor {
             while(iterator.hasNext()) {
                 String key = iterator.next();
                 Object value = paramMap.get(key);
-                if (value instanceof PageParams) {
-                    return (PageParams)value;
+                if (value instanceof PageParams_OMG) {
+                    return (PageParams_OMG)value;
                 }
             }
-        } else if (parameterObject instanceof PageParams) { //参数POJO继承了PageParams
-            return (PageParams) parameterObject;
+        } else if (parameterObject instanceof PageParams_OMG) { //参数POJO继承了PageParams
+            return (PageParams_OMG) parameterObject;
         }
         return pageParams;
     }
@@ -175,7 +175,7 @@ public class PagePlugin implements Interceptor {
 //        System.err.println("总条数：" + total);
         return total;
     }
-    private void setTotalToParams(PageParams pageParams,int total,int pageSize){
+    private void setTotalToParams(PageParams_OMG pageParams, int total, int pageSize){
         pageParams.setTotal(total);
         int totalPage = total % pageSize == 0? total/pageSize:total/pageSize+1;
         pageParams.setTotalPage(totalPage);

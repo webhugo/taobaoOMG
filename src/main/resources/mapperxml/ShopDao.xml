@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.oureda.dao.ShopDao">
+<mapper namespace="cn.oureda.dao.ShopDao_OMG">
     <!--auto generated Code-->
     <resultMap id="AllColumnMap" type="cn.oureda.entity.Shop">
         <result column="shop_name" property="shop_name"/>
@@ -48,13 +48,13 @@
     <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
         INSERT INTO shop
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="pojo.shop_name!=null"> `shop_name`,</if>
-            <if test="pojo.description!=null"> `description`,</if>
-            <if test="pojo.cover!=null"> `cover`,</if>
-            <if test="pojo.boss_id!=null"> `boss_id`,</if>
-            <if test="pojo.id!=null"> `id`,</if>
-            <if test="pojo.create_time!=null"> `create_time`,</if>
-            <if test="pojo.update_time!=null"> `update_time`,</if>
+            <if test="pojo.shop_name!=null">`shop_name`,</if>
+            <if test="pojo.description!=null">`description`,</if>
+            <if test="pojo.cover!=null">`cover`,</if>
+            <if test="pojo.boss_id!=null">`boss_id`,</if>
+            <if test="pojo.id!=null">`id`,</if>
+            <if test="pojo.create_time!=null">`create_time`,</if>
+            <if test="pojo.update_time!=null">`update_time`,</if>
         </trim>
         VALUES
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -90,15 +90,21 @@
     <update id="update">
         UPDATE shop
         <set>
-            <if test="pojo.shop_name != null"> `shop_name` = #{pojo.shop_name}, </if>
-            <if test="pojo.description != null"> `description` = #{pojo.description}, </if>
-            <if test="pojo.cover != null"> `cover` = #{pojo.cover}, </if>
-            <if test="pojo.boss_id != null"> `boss_id` = #{pojo.boss_id}, </if>
-            <if test="pojo.id != null"> `id` = #{pojo.id}, </if>
-            <if test="pojo.create_time != null"> `create_time` = #{pojo.create_time}, </if>
-            <if test="pojo.update_time != null"> `update_time` = #{pojo.update_time} </if>
+            <if test="pojo.shop_name != null">`shop_name` = #{pojo.shop_name},</if>
+            <if test="pojo.description != null">`description` = #{pojo.description},</if>
+            <if test="pojo.cover != null">`cover` = #{pojo.cover},</if>
+            <if test="pojo.boss_id != null">`boss_id` = #{pojo.boss_id},</if>
+            <if test="pojo.id != null">`id` = #{pojo.id},</if>
+            <if test="pojo.create_time != null">`create_time` = #{pojo.create_time},</if>
+            <if test="pojo.update_time != null">`update_time` = #{pojo.update_time}</if>
         </set>
         WHERE id = #{pojo.id}
     </update>
+
+    <select id="findByBossId" resultType="Shop">
+        SELECT *
+        FROM shop
+        WHERE boss_id = #{userId}
+    </select>
 </mapper>
 

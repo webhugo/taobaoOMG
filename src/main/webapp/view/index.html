@@ -102,7 +102,7 @@
                                                     <div class="snipcart-item block">
                                                         <div class="snipcart-thumb">
                                                             <a href="/single?id=${prefer.id}"><img title=" " alt=" "
-                                                                                   src=${prefer.cover}/></a>
+                                                                                                   src=${prefer.cover}/></a>
                                                             <p>${prefer.goods_name}</p>
                                                             <div class="stars">
                                                                 <i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -121,10 +121,10 @@
                                                                     <input type="hidden" name="add" value="1"/>
                                                                     <input type="hidden" name="business" value=" "/>
                                                                     <input type="hidden" name="item_name"
-                                                                           value="Fortune Sunflower Oil"/>
-                                                                    <input type="hidden" name="amount" value="20.99"/>
+                                                                           value="${prefer.goods_name}"/>
+                                                                    <input type="hidden" name="amount" value=${prefer.price}/>
                                                                     <input type="hidden" name="discount_amount"
-                                                                           value="1.00"/>
+                                                                           value="0"/>
                                                                     <input type="hidden" name="currency_code"
                                                                            value="USD"/>
                                                                     <input type="hidden" name="return" value=" "/>
@@ -164,7 +164,7 @@
                                                     <div class="snipcart-item block">
                                                         <div class="snipcart-thumb">
                                                             <a href="/single?id=${prefer.id}"><img title=" " alt=" "
-                                                                                   src=${prefer.cover}/></a>
+                                                                                                   src=${prefer.cover}/></a>
                                                             <p>${prefer.goods_name}</p>
                                                             <div class="stars">
                                                                 <i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -282,7 +282,7 @@
         <div class="brands-agile">
             <div class="col-md-2 w3layouts-brand">
                 <div class="brands-w3l">
-                    <p><a href="#">OMG商店</a></p>
+                    <p><a href="/shop?shopId=1000">OMG商店</a></p>
                 </div>
             </div>
             <div class="col-md-2 w3layouts-brand">

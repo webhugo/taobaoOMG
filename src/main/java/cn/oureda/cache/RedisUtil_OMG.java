@@ -12,10 +12,10 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by webhugo on 17-6-2.
+ * 对redis进行操作的相关封装
  */
 @Service
-public final class RedisUtil {
+public final class RedisUtil_OMG {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private RedisTemplate<Serializable, Object> redisTemplate;

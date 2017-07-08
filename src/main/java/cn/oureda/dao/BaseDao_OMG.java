@@ -5,9 +5,10 @@ import org.apache.ibatis.annotations.Param;
 import java.io.Serializable;
 
 /**
- * Created by webhugo on 17-5-10.
+ * dao层,和底层数据库进行交互
+ * @param <T>
  */
-public interface BaseDao<T> {
+public interface BaseDao_OMG<T> {
 
     T find(@Param("id") Serializable id);
 

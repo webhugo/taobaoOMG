@@ -1,24 +1,24 @@
 package cn.oureda.service;
 
-import cn.oureda.dao.BaseDao;
+import cn.oureda.dao.BaseDao_OMG;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 import cn.oureda.entity.User;
-import cn.oureda.dao.UserDao;
+import cn.oureda.dao.UserDao_OMG;
 
 @Service
-public class UserService extends BaseService<User> {
+public class UserService_OMG extends BaseService_OMG<User> {
 
     @Resource
-    private UserDao userDao;
+    private UserDao_OMG userDao;
 
     @Override
-    @Resource(name = "userDao")
-    public void setBaseDao(BaseDao baseDao) {
-        super.setBaseDao(baseDao);
+    @Resource(name = "userDao_OMG")
+    public void setBaseDaoOMG(BaseDao_OMG baseDaoOMG) {
+        super.setBaseDaoOMG(baseDaoOMG);
     }
 
     public int insert(User pojo) {

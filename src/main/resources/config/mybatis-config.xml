@@ -10,7 +10,7 @@
         <typeAlias alias="Comment" type="cn.oureda.entity.Comment"></typeAlias>
     </typeAliases>
     <plugins>
-        <plugin interceptor="cn.oureda.util.PagePlugin">
+        <plugin interceptor="cn.oureda.util.PagePlugin_OMG">
             <!--默认第1页-->
             <property name="default.page" value="1"/>
             <!--默认每页20条-->

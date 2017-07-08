@@ -11,6 +11,16 @@ public class Comment extends BaseEntity {
     //评论的用户
     private Long user_id;
 
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public String getContent() {
         return content;
     }

@@ -10,7 +10,7 @@ import java.util.Properties;
 /**
  * Created by webhugo on 3/30/17.
  */
-public class DispatcherServletImpl extends DispatcherServlet {
+public class DispatcherServletImpl_OMG extends DispatcherServlet {
     static {
         String path = Thread.currentThread().getContextClassLoader().getResource("").getPath();
         Properties props = new Properties();

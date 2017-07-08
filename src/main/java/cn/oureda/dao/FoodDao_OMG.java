@@ -1,7 +1,6 @@
 package cn.oureda.dao;
 
-import cn.oureda.util.PageParams;
-import org.apache.ibatis.annotations.Mapper;
+import cn.oureda.util.PageParams_OMG;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -11,7 +10,7 @@ import cn.oureda.entity.Food;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FoodDao extends BaseDao<Food> {
+public interface FoodDao_OMG extends BaseDao_OMG<Food> {
     int insert(@Param("pojo") Food pojo);
 
     int insertSelective(@Param("pojo") Food pojo);
@@ -22,10 +21,12 @@ public interface FoodDao extends BaseDao<Food> {
 
     List<Food> findAll(@Param("shopId") Long shopId);
 
-    List<Food> findPrefers(@Param("flag") String flag, PageParams params);
+    List<Food> findPrefers(@Param("flag") String flag, PageParams_OMG params);
 
     List<Food> search(@Param("strSet") Set<String> stringSet);
 
-    List<Food> findAllByCreate(PageParams params);
+    List<Food> findAllByCreate(PageParams_OMG params);
+
+    List<Food> findPrefersAndShopId(@Param("flag") String flag,@Param("shopId") Integer shopId,PageParams_OMG params);
 }
 

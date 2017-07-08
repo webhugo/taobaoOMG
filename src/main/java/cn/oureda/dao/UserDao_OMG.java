@@ -1,6 +1,5 @@
 package cn.oureda.dao;
 
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -9,7 +8,7 @@ import cn.oureda.entity.User;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserDao extends BaseDao<User> {
+public interface UserDao_OMG extends BaseDao_OMG<User> {
     int insert(@Param("pojo") User pojo);
 
     int insertSelective(@Param("pojo") User pojo);

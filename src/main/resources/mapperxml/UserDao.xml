@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.oureda.dao.UserDao">
+<mapper namespace="cn.oureda.dao.UserDao_OMG">
     <!--auto generated Code-->
     <resultMap id="AllColumnMap" type="cn.oureda.entity.User">
         <result column="email" property="email"/>
@@ -113,6 +113,12 @@
     <select id="findByEmail" resultType="User">
         SELECT * FROM user
         WHERE email = #{email}
+    </select>
+
+
+    <select id="find" resultType="User">
+        SELECT * FROM user
+        WHERE id = #{id}
     </select>
 </mapper>
 

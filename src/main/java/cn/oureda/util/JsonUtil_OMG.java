@@ -3,10 +3,10 @@ package cn.oureda.util;
 import com.google.gson.Gson;
 
 /**
- * Created by webhugo on 17-5-11.
+ * json的相关操作
  */
-public class JsonUtil {
-    private JsonUtil() {}
+public class JsonUtil_OMG {
+    private JsonUtil_OMG() {}
 
     /**
      * 将对象序列化成json字符串

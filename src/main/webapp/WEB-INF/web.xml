@@ -25,7 +25,7 @@
         <servlet-name>springmvc</servlet-name>
         <!--<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
         <!--继承DispatcherServlet的一个类，主要是为了启动容器的时候初始化一些事情-->
-        <servlet-class>cn.oureda.DispatcherServletImpl</servlet-class>
+        <servlet-class>cn.oureda.DispatcherServletImpl_OMG</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>

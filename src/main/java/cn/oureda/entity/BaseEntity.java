@@ -1,6 +1,6 @@
 package cn.oureda.entity;
 
-import cn.oureda.util.JsonUtil;
+import cn.oureda.util.JsonUtil_OMG;
 
 import java.io.Serializable;
 
@@ -39,6 +39,6 @@ public class BaseEntity implements Serializable{
 
     @Override
     public String toString() {
-        return JsonUtil.toJson(this);
+        return JsonUtil_OMG.toJson(this);
     }
 }

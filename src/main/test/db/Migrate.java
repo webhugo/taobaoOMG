@@ -1,9 +1,9 @@
 package db;
 
-import cn.oureda.dao.CommentDao;
-import cn.oureda.dao.FoodDao;
-import cn.oureda.dao.ShopDao;
-import cn.oureda.dao.UserDao;
+import cn.oureda.dao.CommentDao_OMG;
+import cn.oureda.dao.FoodDao_OMG;
+import cn.oureda.dao.ShopDao_OMG;
+import cn.oureda.dao.UserDao_OMG;
 import cn.oureda.entity.Comment;
 import cn.oureda.entity.Food;
 import cn.oureda.entity.Shop;
@@ -45,10 +45,10 @@ public class Migrate {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
         SqlSession session = sqlSessionFactory.openSession();
-        FoodDao foodDao = session.getMapper(FoodDao.class);
-        ShopDao shopDao = session.getMapper(ShopDao.class);
-        UserDao userDao = session.getMapper(UserDao.class);
-        CommentDao commentDao = session.getMapper(CommentDao.class);
+        FoodDao_OMG foodDao = session.getMapper(FoodDao_OMG.class);
+        ShopDao_OMG shopDao = session.getMapper(ShopDao_OMG.class);
+        UserDao_OMG userDao = session.getMapper(UserDao_OMG.class);
+        CommentDao_OMG commentDao = session.getMapper(CommentDao_OMG.class);
 
         try {
             User user = new User();

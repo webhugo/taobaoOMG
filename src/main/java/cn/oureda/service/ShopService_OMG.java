@@ -1,22 +1,23 @@
 package cn.oureda.service;
 
-import cn.oureda.dao.BaseDao;
+import cn.oureda.dao.BaseDao_OMG;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
+import java.io.Serializable;
 import java.util.List;
 import cn.oureda.entity.Shop;
-import cn.oureda.dao.ShopDao;
+import cn.oureda.dao.ShopDao_OMG;
 
 @Service
-public class ShopService extends BaseService<Shop>{
+public class ShopService_OMG extends BaseService_OMG<Shop> {
 
     @Resource
-    private ShopDao shopDao;
+    private ShopDao_OMG shopDao;
 
     @Override
-    @Resource(name = "shopDao")
-    public void setBaseDao(BaseDao baseDao) {
-        super.setBaseDao(baseDao);
+    @Resource(name = "shopDao_OMG")
+    public void setBaseDaoOMG(BaseDao_OMG baseDaoOMG) {
+        super.setBaseDaoOMG(baseDaoOMG);
     }
 
     public int insert(Shop pojo){
@@ -33,5 +34,9 @@ public class ShopService extends BaseService<Shop>{
 
     public int update(Shop pojo){
         return shopDao.update(pojo);
+    }
+
+    public Shop findByBossId(Serializable bossId){
+        return shopDao.findByBossId(bossId);
     }
 }
