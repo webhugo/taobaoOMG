@@ -9,8 +9,8 @@
         <module name="taobaoOMG" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="taobaoOMG" target="1.7" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="taobaoOMG" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

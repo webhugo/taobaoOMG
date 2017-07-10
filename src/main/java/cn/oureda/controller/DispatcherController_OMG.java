@@ -1,9 +1,6 @@
 package cn.oureda.controller;
 
-import cn.oureda.entity.Comment;
-import cn.oureda.entity.Food;
-import cn.oureda.entity.Shop;
-import cn.oureda.entity.User;
+import cn.oureda.entity.*;
 import cn.oureda.util.JsonUtil_OMG;
 import cn.oureda.util.PageParams_OMG;
 import cn.oureda.util.UploadHelper_OMG;
@@ -265,6 +262,7 @@ public class DispatcherController_OMG extends BaseController_OMG {
 
     /**
      * 商店老板的后台管理
+     *
      * @param model
      * @param request
      * @return
@@ -287,6 +285,7 @@ public class DispatcherController_OMG extends BaseController_OMG {
 
     /**
      * 老板后台添加商品
+     *
      * @param model
      * @param request
      * @param file
@@ -316,6 +315,25 @@ public class DispatcherController_OMG extends BaseController_OMG {
         model.addObject("shop_id", shop.getId());
         UserAdd(model, request);
         model.setViewName("back");
+        return model;
+    }
+
+    @GetMapping("/sell")
+    public ModelAndView sell(ModelAndView model,
+                             HttpServletRequest request) {
+        UserAdd(model, request);
+        Integer shopId = getRequestValue(request, "shopId", null, Integer.class);
+        List<Food> listFood = foodService.findByShopId(shopId);
+        List<SalesVolume> salesVolumeList = new LinkedList<>();
+        listFood.forEach(food -> {
+            SalesVolume salesVolume = salesVolumeService.findByGoods_id(food.getId());
+            if (salesVolume.getCount() != 0) {
+                salesVolume.setName(food.getGoods_name());
+                salesVolumeList.add(salesVolume);
+            }
+        });
+        model.setViewName("sell");
+        model.addObject("salesVolumeList", salesVolumeList);
         return model;
     }
 }

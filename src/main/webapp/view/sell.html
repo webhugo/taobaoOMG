@@ -40,80 +40,31 @@
     <!-- start-smoth-scrolling -->
 
     <link rel="stylesheet" href="css/amazeui.min.css"/>
-    <style>
-        #sell{
-            margin-left: 400px;
-        }
-    </style>
-    <script>
-        jQuery(document).ready(function ($) {
-            $('#sell').click(function () {
-                window.location.href="/sell?shopId=${shop_id}";
-            })
-        })
-    </script>
 </head>
 <body>
 <#include "header.html"/>
-<div style="height: 30px"></div>
-<div class="am-g">
-    <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
-        <form class="am-form" method="post" action="/addGoods" enctype="multipart/form-data">
-            <fieldset>
-                <legend>货物添加 <span id="sell">销售管理</span></legend>
-                <div class="am-form-group">
-                    <label for="doc-ipt-name-1">名字</label>
-                    <input type="text" name="goods_name" id="doc-ipt-name-1" placeholder="输入商品名字">
-                </div>
-
-                <div class="am-form-group">
-                    <label for="doc-ipt-price-1">销售价格</label>
-                    <input type="text" name="price" id="doc-ipt-price-1" placeholder="输入销售价格">
-                </div>
-
-                <div class="am-form-group">
-                    <label for="doc-ipt-Oprice-1">销售原价格</label>
-                    <input type="text" name="origin_price" id="doc-ipt-Oprice-1" placeholder="输入销售原价格">
-                </div>
-
-                <div class="am-form-group">
-                    <label for="doc-ipt-num-1">存货数量</label>
-                    <input type="text" name="count" id="doc-ipt-num-1" placeholder="输入存货数量">
-                </div>
-
-                <div class="am-form-group">
-                    <label for="doc-ipt-type-1">类型</label>
-                    <input type="text" name="type" id="doc-ipt-type-1" placeholder="输入类型">
-                </div>
-
-                <div class="am-form-group">
-                    <label for="doc-ipt-flag-1">标签</label>
-                    <input type="text" name="flag" id="doc-ipt-flag-1" placeholder="输入标签">
-                </div>
-
-                <input type="hidden" name="shop_id" value=${shop_id}>
-
-
-                <div class="am-form-group">
-                    <label for="doc-ipt-file-1">商品封面</label>
-                    <input type="file" id="doc-ipt-file-1" name="cover">
-                    <p class="am-form-help">请选择要上传的封面图片...</p>
-                </div>
-
-                <div class="am-form-group">
-                    <label for="doc-ta-1">商品描述</label>
-                    <textarea name="description" rows="5" id="doc-ta-1"></textarea>
-                </div>
-
-                <p>
-                    <button type="submit" class="am-btn am-btn-default">提交</button>
-                </p>
-            </fieldset>
-        </form>
-    </div>
+<div style="height: 50px"></div>
+<div class="container">
+    <table class="am-table am-table-striped am-table-hover">
+        <thead>
+        <tr>
+            <th>商品名称</th>
+            <th>销量</th>
+            <th>销售额</th>
+        </tr>
+        </thead>
+        <tbody>
+        <#list salesVolumeList as salesVolume>
+            <tr>
+                <td>${salesVolume.name}</td>
+                <td>${salesVolume.count}</td>
+                <td>${salesVolume.sum}</td>
+            </tr>
+        </#list>
+        </tbody>
+    </table>
 </div>
-
-
+<div style="height: 50px"></div>
 <#include "footer.html"/>
 
 <!-- Bootstrap Core JavaScript -->

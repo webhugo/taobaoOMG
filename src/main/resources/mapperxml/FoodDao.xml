@@ -204,7 +204,14 @@
 
     <select id="findAllByCreate" resultMap="AllColumnMap">
         SELECT *
-        FROM food ORDER BY create_time DESC
+        FROM food
+        ORDER BY create_time DESC
+    </select>
+
+    <select id="findByShopId" resultMap="AllColumnMap">
+        SELECT *
+        FROM food
+        WHERE shop_id = #{shopId}
     </select>
 </mapper>
 

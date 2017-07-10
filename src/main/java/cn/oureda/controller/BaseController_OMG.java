@@ -2,10 +2,7 @@ package cn.oureda.controller;
 
 import cn.oureda.cache.RedisUtil_OMG;
 import cn.oureda.entity.User;
-import cn.oureda.service.CommentService_OMG;
-import cn.oureda.service.FoodService_OMG;
-import cn.oureda.service.ShopService_OMG;
-import cn.oureda.service.UserService_OMG;
+import cn.oureda.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +42,8 @@ public class BaseController_OMG<T> {
     protected ShopService_OMG shopService;
     @Resource
     protected CommentService_OMG commentService;
+    @Resource
+    protected SalesVolumeService_OMG salesVolumeService;
 
 
     /**

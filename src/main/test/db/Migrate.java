@@ -1,13 +1,7 @@
 package db;
 
-import cn.oureda.dao.CommentDao_OMG;
-import cn.oureda.dao.FoodDao_OMG;
-import cn.oureda.dao.ShopDao_OMG;
-import cn.oureda.dao.UserDao_OMG;
-import cn.oureda.entity.Comment;
-import cn.oureda.entity.Food;
-import cn.oureda.entity.Shop;
-import cn.oureda.entity.User;
+import cn.oureda.dao.*;
+import cn.oureda.entity.*;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -49,6 +43,7 @@ public class Migrate {
         ShopDao_OMG shopDao = session.getMapper(ShopDao_OMG.class);
         UserDao_OMG userDao = session.getMapper(UserDao_OMG.class);
         CommentDao_OMG commentDao = session.getMapper(CommentDao_OMG.class);
+        SalesVolumeDao_OMG salesVolumeDao = session.getMapper(SalesVolumeDao_OMG.class);
 
         try {
             User user = new User();
@@ -73,7 +68,7 @@ public class Migrate {
             food.setGoods_name("Tata-sal");
             food.setOrigin_price(35.00);
             food.setPrice(20.99);
-            food.setShop_id(10000L);
+            food.setShop_id(1000L);
             food.setCreate_time(System.currentTimeMillis());
             food.setUpdate_time(System.currentTimeMillis());
             food.setSell_num(0);
@@ -87,7 +82,7 @@ public class Migrate {
             food1.setGoods_name("Fortune-sunflowe");
             food1.setOrigin_price(35.00);
             food1.setPrice(20.99);
-            food1.setShop_id(10000L);
+            food1.setShop_id(1000L);
             food1.setCreate_time(System.currentTimeMillis());
             food1.setUpdate_time(System.currentTimeMillis());
             food1.setSell_num(0);
@@ -101,7 +96,7 @@ public class Migrate {
             food2.setGoods_name("Aashirvaad-atta");
             food2.setOrigin_price(65.00);
             food2.setPrice(20.99);
-            food2.setShop_id(10000L);
+            food2.setShop_id(1000L);
             food2.setCreate_time(System.currentTimeMillis());
             food2.setUpdate_time(System.currentTimeMillis());
             food2.setSell_num(0);
@@ -115,7 +110,7 @@ public class Migrate {
             food3.setCover("images/4.png");
             food3.setOrigin_price(35.99);
             food3.setPrice(55.00);
-            food3.setShop_id(10000L);
+            food3.setShop_id(1000L);
             food3.setCreate_time(System.currentTimeMillis());
             food3.setUpdate_time(System.currentTimeMillis());
             food3.setSell_num(0);
@@ -129,7 +124,7 @@ public class Migrate {
             food4.setCover("images/5.png");
             food4.setOrigin_price(30.99);
             food4.setPrice(45.00);
-            food4.setShop_id(10000L);
+            food4.setShop_id(1000L);
             food4.setCreate_time(System.currentTimeMillis());
             food4.setUpdate_time(System.currentTimeMillis());
             food4.setSell_num(0);
@@ -143,7 +138,7 @@ public class Migrate {
             food5.setCover("images/6.png");
             food5.setOrigin_price(80.99);
             food5.setPrice(105.00);
-            food5.setShop_id(10000L);
+            food5.setShop_id(1000L);
             food5.setCreate_time(System.currentTimeMillis());
             food5.setUpdate_time(System.currentTimeMillis());
             food5.setSell_num(0);
@@ -164,7 +159,7 @@ public class Migrate {
             food.setGoods_name("Sona-Masoori-Rice");
             food.setOrigin_price(35.99);
             food.setPrice(50.00);
-            food.setShop_id(10000L);
+            food.setShop_id(1000L);
             food.setCreate_time(System.currentTimeMillis());
             food.setUpdate_time(System.currentTimeMillis());
             food.setSell_num(0);
@@ -179,7 +174,7 @@ public class Migrate {
             food1.setGoods_name("Milky-Mist-Paneer");
             food1.setOrigin_price(30.99);
             food1.setPrice(45.00);
-            food1.setShop_id(10000L);
+            food1.setShop_id(1000L);
             food1.setCreate_time(System.currentTimeMillis());
             food1.setUpdate_time(System.currentTimeMillis());
             food1.setSell_num(0);
@@ -194,7 +189,7 @@ public class Migrate {
             food2.setGoods_name("Basmati-Rice");
             food2.setOrigin_price(80.99);
             food2.setPrice(105.00);
-            food2.setShop_id(10000L);
+            food2.setShop_id(1000L);
             food2.setCreate_time(System.currentTimeMillis());
             food2.setUpdate_time(System.currentTimeMillis());
             food2.setSell_num(0);
@@ -209,7 +204,7 @@ public class Migrate {
             food3.setCover("images/10.png");
             food3.setOrigin_price(20.99);
             food3.setPrice(35.00);
-            food3.setShop_id(10000L);
+            food3.setShop_id(1000L);
             food3.setCreate_time(System.currentTimeMillis());
             food3.setUpdate_time(System.currentTimeMillis());
             food3.setSell_num(0);
@@ -224,7 +219,7 @@ public class Migrate {
             food4.setCover("images/12.png");
             food4.setOrigin_price(20.99);
             food4.setPrice(35.00);
-            food4.setShop_id(10000L);
+            food4.setShop_id(1000L);
             food4.setCreate_time(System.currentTimeMillis());
             food4.setUpdate_time(System.currentTimeMillis());
             food4.setSell_num(0);
@@ -239,7 +234,7 @@ public class Migrate {
             food5.setCover("images/13.png");
             food5.setOrigin_price(40.99);
             food5.setPrice(65.00);
-            food5.setShop_id(10000L);
+            food5.setShop_id(1000L);
             food5.setCreate_time(System.currentTimeMillis());
             food5.setUpdate_time(System.currentTimeMillis());
             food5.setSell_num(0);
@@ -256,14 +251,13 @@ public class Migrate {
             foodDao.insert(food5);
 
 
-
             Food food6 = new Food();
             food6.setGoods_name("Sampann-toor-dal");
             food6.setPrice(35.99);
             food6.setOrigin_price(55.00);
             food6.setCount(10);
             food6.setCover("images/pf4.png");
-            food6.setShop_id(10000L);
+            food6.setShop_id(1000L);
             food6.setCreate_time(System.currentTimeMillis());
             food6.setUpdate_time(System.currentTimeMillis());
             food6.setSell_num(0);
@@ -279,7 +273,7 @@ public class Migrate {
             food7.setOrigin_price(45.00);
             food7.setCount(10);
             food7.setCover("images/bv3.png");
-            food7.setShop_id(10000L);
+            food7.setShop_id(1000L);
             food7.setCreate_time(System.currentTimeMillis());
             food7.setUpdate_time(System.currentTimeMillis());
             food7.setSell_num(0);
@@ -295,7 +289,7 @@ public class Migrate {
             food8.setOrigin_price(105.00);
             food8.setCount(10);
             food8.setCover("images/16.png");
-            food8.setShop_id(10000L);
+            food8.setShop_id(1000L);
             food8.setCreate_time(System.currentTimeMillis());
             food8.setUpdate_time(System.currentTimeMillis());
             food8.setSell_num(0);
@@ -311,7 +305,7 @@ public class Migrate {
             food9.setOrigin_price(55.00);
             food9.setCount(10);
             food9.setCover("images/16.png");
-            food9.setShop_id(10000L);
+            food9.setShop_id(1000L);
             food9.setCreate_time(System.currentTimeMillis());
             food9.setUpdate_time(System.currentTimeMillis());
             food9.setSell_num(0);
@@ -342,6 +336,26 @@ public class Migrate {
             comment.setCreate_time(System.currentTimeMillis());
             comment.setUpdate_time(System.currentTimeMillis());
             commentDao.insert(comment);
+
+            SalesVolume salesVolume = new SalesVolume();
+            salesVolume.setGoods_id(1000L);
+            salesVolume.setPrice(20.99);
+            salesVolume.setCreate_time(System.currentTimeMillis());
+            salesVolume.setUpdate_time(System.currentTimeMillis());
+            salesVolumeDao.insert(salesVolume);
+            salesVolume.setId(null);
+            salesVolumeDao.insert(salesVolume);
+            salesVolume.setId(null);
+            salesVolumeDao.insert(salesVolume);
+            salesVolume.setId(null);
+            salesVolumeDao.insert(salesVolume);
+
+            SalesVolume salesVolume1 = new SalesVolume();
+            salesVolume1.setGoods_id(1001L);
+            salesVolume1.setPrice(20.99);
+            salesVolume1.setCreate_time(System.currentTimeMillis());
+            salesVolume1.setUpdate_time(System.currentTimeMillis());
+            salesVolumeDao.insert(salesVolume1);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

@@ -71,3 +71,14 @@ CREATE TABLE `user` (
   AUTO_INCREMENT = 1000
   DEFAULT CHARSET = utf8
   COMMENT '`user`';
+
+-- auto Generated on 2017-07-10 10:50:21
+-- DROP TABLE IF EXISTS `sales_volume`;
+CREATE TABLE `sales_volume`(
+  `goods_id` BIGINT (15) NOT NULL,
+  `price` DOUBLE (16,4) NOT NULL,
+  `id` BIGINT (15) NOT NULL AUTO_INCREMENT,
+  `create_time` BIGINT (15) NOT NULL,
+  `update_time` BIGINT (15) NOT NULL,
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '`sales_volume`';

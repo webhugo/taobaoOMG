@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS `sales_volume`;
 DROP TABLE IF EXISTS `food`;
 DROP TABLE IF EXISTS `user`;
 DROP TABLE IF EXISTS `comment`;

@@ -28,5 +28,7 @@ public interface FoodDao_OMG extends BaseDao_OMG<Food> {
     List<Food> findAllByCreate(PageParams_OMG params);
 
     List<Food> findPrefersAndShopId(@Param("flag") String flag,@Param("shopId") Integer shopId,PageParams_OMG params);
+
+    List<Food> findByShopId(@Param("shopId") Integer shopId);
 }
 

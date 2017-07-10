@@ -8,6 +8,7 @@
         <typeAlias alias="Food" type="cn.oureda.entity.Food"></typeAlias>
         <typeAlias alias="Shop" type="cn.oureda.entity.Shop"></typeAlias>
         <typeAlias alias="Comment" type="cn.oureda.entity.Comment"></typeAlias>
+        <typeAlias alias="SalesVolume" type="cn.oureda.entity.SalesVolume"></typeAlias>
     </typeAliases>
     <plugins>
         <plugin interceptor="cn.oureda.util.PagePlugin_OMG">

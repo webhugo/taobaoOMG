@@ -8,6 +8,7 @@
         <typeAlias alias="Food" type="cn.oureda.entity.Food"></typeAlias>
         <typeAlias alias="Comment" type="cn.oureda.entity.Comment"></typeAlias>
         <typeAlias alias="Shop" type="cn.oureda.entity.Shop"></typeAlias>
+        <typeAlias alias="SalesVolume" type="cn.oureda.entity.SalesVolume"></typeAlias>
     </typeAliases>
     <plugins>
         <plugin interceptor="cn.oureda.util.PagePlugin_OMG">
@@ -42,5 +43,6 @@
         <mapper resource="mapperxml/CommentDao.xml"/>
         <mapper resource="mapperxml/ShopDao.xml"/>
         <mapper resource="mapperxml/UserDao.xml"/>
+        <mapper resource="mapperxml/SalesVolumeDao.xml"/>
     </mappers>
 </configuration>

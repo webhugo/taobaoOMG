@@ -54,7 +54,11 @@ public class FoodService_OMG extends BaseService_OMG<Food> {
         return foodDao.findAllByCreate(params);
     }
 
-    public List<Food> findPrefersAndShopId(String flag,Integer shopId,PageParams_OMG params){
-        return foodDao.findPrefersAndShopId(flag,shopId,params);
+    public List<Food> findPrefersAndShopId(String flag, Integer shopId, PageParams_OMG params) {
+        return foodDao.findPrefersAndShopId(flag, shopId, params);
+    }
+
+    public List<Food> findByShopId(Integer shopId) {
+        return foodDao.findByShopId(shopId);
     }
 }

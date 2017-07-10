@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.oureda.dao.SalesVolumeDao_OMG">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="cn.oureda.entity.SalesVolume">
+        <result column="goods_id" property="goods_id"/>
+        <result column="price" property="price"/>
+        <result column="id" property="id"/>
+        <result column="create_time" property="create_time"/>
+        <result column="update_time" property="update_time"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `goods_id`,
+        `price`,
+        `id`,
+        `create_time`,
+        `update_time`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO sales_volume (
+            `goods_id`,
+            `price`,
+            `id`,
+            `create_time`,
+            `update_time`
+        ) VALUES (
+            #{pojo.goods_id},
+            #{pojo.price},
+            #{pojo.id},
+            #{pojo.create_time},
+            #{pojo.update_time}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO sales_volume
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.goods_id!=null">`goods_id`,</if>
+            <if test="pojo.price!=null">`price`,</if>
+            <if test="pojo.id!=null">`id`,</if>
+            <if test="pojo.create_time!=null">`create_time`,</if>
+            <if test="pojo.update_time!=null">`update_time`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.goods_id!=null">#{pojo.goods_id},</if>
+            <if test="pojo.price!=null">#{pojo.price},</if>
+            <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.create_time!=null">#{pojo.create_time},</if>
+            <if test="pojo.update_time!=null">#{pojo.update_time},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO sales_volume (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.goods_id},
+            #{pojo.price},
+            #{pojo.id},
+            #{pojo.create_time},
+            #{pojo.update_time}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE sales_volume
+        <set>
+            <if test="pojo.goods_id != null">`goods_id` = #{pojo.goods_id},</if>
+            <if test="pojo.price != null">`price` = #{pojo.price},</if>
+            <if test="pojo.id != null">`id` = #{pojo.id},</if>
+            <if test="pojo.create_time != null">`create_time` = #{pojo.create_time},</if>
+            <if test="pojo.update_time != null">`update_time` = #{pojo.update_time}</if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+
+
+    <resultMap id="ColumnMap" type="cn.oureda.entity.SalesVolume">
+        <result column="goods_id" property="goods_id"/>
+        <result column="price" property="price"/>
+        <result column="id" property="id"/>
+        <result column="sum" property="sum"/>
+        <result column="count" property="count"/>
+        <result column="create_time" property="create_time"/>
+        <result column="update_time" property="update_time"/>
+    </resultMap>
+    <select id="findByGoods_id" resultMap="ColumnMap">
+        SELECT
+            sum(price) AS sum,
+            count(*)   AS count
+        FROM sales_volume
+        WHERE goods_id = #{goods_id}
+    </select>
+</mapper>
+
