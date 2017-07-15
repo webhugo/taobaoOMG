@@ -1,7 +1,7 @@
 package cn.oureda.entity;
 
 /**
- * Created by webhugo on 17-7-10.
+ * Created by 王佳鑫 on 17-7-10.
  */
 public class SalesVolume extends BaseEntity {
     private Long goods_id;

@@ -9,6 +9,7 @@ import java.io.Serializable;
 
 /**
  * service层,和dao层进行交互
+ * Created by 程山川 on 17-7-5.
  * @param <T>
  */
 public class BaseService_OMG<T extends BaseEntity> {

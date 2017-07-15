@@ -5,7 +5,7 @@ import cn.oureda.util.JsonUtil_OMG;
 import java.io.Serializable;
 
 /**
- * Created by webhugo on 17-7-5.
+ * Created by 王佳鑫 on 17-7-5.
  */
 public class BaseEntity implements Serializable{
     //作为数据库的主键

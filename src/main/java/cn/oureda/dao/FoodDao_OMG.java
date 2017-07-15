@@ -9,6 +9,9 @@ import java.util.Set;
 import cn.oureda.entity.Food;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Created by 曹婉悦 on 17-7-5.
+ */
 @Repository
 public interface FoodDao_OMG extends BaseDao_OMG<Food> {
     int insert(@Param("pojo") Food pojo);

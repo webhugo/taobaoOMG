@@ -6,6 +6,9 @@ import java.util.List;
 import cn.oureda.entity.Comment;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Created by 曹婉悦 on 17-7-5.
+ */
 @Repository
 public interface CommentDao_OMG extends BaseDao_OMG<Comment> {
     int insert(@Param("pojo") Comment pojo);

@@ -10,7 +10,9 @@ import java.util.Set;
 
 import cn.oureda.entity.Food;
 import cn.oureda.dao.FoodDao_OMG;
-
+/**
+ * Created by 程山川 on 17-7-5.
+ */
 @Service
 public class FoodService_OMG extends BaseService_OMG<Food> {
 

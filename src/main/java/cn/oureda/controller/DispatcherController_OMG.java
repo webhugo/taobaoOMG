@@ -17,6 +17,7 @@ import java.util.*;
 
 /**
  * 继承于控制层基类,作为业务逻辑的控制类主类
+ * Created by 王毓玮 on 17-7-5.
  */
 @Controller
 public class DispatcherController_OMG extends BaseController_OMG {

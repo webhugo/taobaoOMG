@@ -8,7 +8,9 @@ import java.util.List;
 
 import cn.oureda.entity.User;
 import cn.oureda.dao.UserDao_OMG;
-
+/**
+ * Created by 程山川 on 17-7-5.
+ */
 @Service
 public class UserService_OMG extends BaseService_OMG<User> {
 

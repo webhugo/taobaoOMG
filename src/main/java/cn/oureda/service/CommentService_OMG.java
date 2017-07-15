@@ -7,6 +7,9 @@ import java.util.List;
 import cn.oureda.entity.Comment;
 import cn.oureda.dao.CommentDao_OMG;
 
+/**
+ * Created by 程山川 on 17-7-5.
+ */
 @Service
 public class CommentService_OMG extends BaseService_OMG<Comment> {
 

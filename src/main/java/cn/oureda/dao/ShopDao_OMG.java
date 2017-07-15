@@ -8,6 +8,9 @@ import java.util.List;
 import cn.oureda.entity.Shop;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Created by 曹婉悦 on 17-7-5.
+ */
 @Repository
 public interface ShopDao_OMG extends BaseDao_OMG<Shop> {
     int insert(@Param("pojo") Shop pojo);

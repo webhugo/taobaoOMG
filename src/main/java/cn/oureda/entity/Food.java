@@ -1,7 +1,7 @@
 package cn.oureda.entity;
 
 /**
- * Created by webhugo on 17-7-5.
+ * Created by 王佳鑫 on 17-7-5.
  */
 public class Food extends Goods {
     

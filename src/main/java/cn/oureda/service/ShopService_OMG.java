@@ -7,7 +7,9 @@ import java.io.Serializable;
 import java.util.List;
 import cn.oureda.entity.Shop;
 import cn.oureda.dao.ShopDao_OMG;
-
+/**
+ * Created by 程山川 on 17-7-5.
+ */
 @Service
 public class ShopService_OMG extends BaseService_OMG<Shop> {
 

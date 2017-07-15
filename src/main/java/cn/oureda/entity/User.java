@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by webhugo on 17-7-5.
+ * Created by 王佳鑫 on 17-7-5.
  */
 public class User extends BaseEntity {
     //登录邮箱

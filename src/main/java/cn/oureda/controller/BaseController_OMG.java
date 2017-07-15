@@ -17,7 +17,7 @@ import java.util.Map;
 
 /**
  * 作为控制层的基类
- *
+ *Created by 王毓玮 on 17-7-5.
  * @param <T>
  */
 public class BaseController_OMG<T> {

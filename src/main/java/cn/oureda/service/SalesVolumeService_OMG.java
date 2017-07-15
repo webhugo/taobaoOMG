@@ -7,7 +7,9 @@ import java.io.Serializable;
 import java.util.List;
 import cn.oureda.entity.SalesVolume;
 import cn.oureda.dao.SalesVolumeDao_OMG;
-
+/**
+ * Created by 程山川 on 17-7-5.
+ */
 @Service
 public class SalesVolumeService_OMG extends BaseService_OMG<SalesVolume>{
 

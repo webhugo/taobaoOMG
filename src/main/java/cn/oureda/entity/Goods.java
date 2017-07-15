@@ -1,7 +1,7 @@
 package cn.oureda.entity;
 
 /**
- * Created by webhugo on 17-7-6.
+ * Created by 王佳鑫 on 17-7-6.
  */
 public class Goods extends BaseEntity {
     //商品的名字

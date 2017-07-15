@@ -9,6 +9,9 @@ import java.util.List;
 import cn.oureda.entity.SalesVolume;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Created by 曹婉悦 on 17-7-5.
+ */
 @Repository
 public interface SalesVolumeDao_OMG extends BaseDao_OMG<SalesVolume> {
     int insert(@Param("pojo") SalesVolume pojo);
